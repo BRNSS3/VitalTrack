@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0D0F14;
+  --foreground: #F0F2F7;
+  --card: #161A23;
+  --card-foreground: #F0F2F7;
+  --popover: #1E2433;
+  --popover-foreground: #F0F2F7;
+  --primary: #00E5A0;
+  --primary-foreground: #0D0F14;
+  --secondary: #252A36;
+  --secondary-foreground: #F0F2F7;
+  --muted: #1E2433;
+  --muted-foreground: #6B7280;
+  --accent: #7C6AF7;
+  --accent-foreground: #F0F2F7;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #F0F2F7;
+  --border: #252A36;
+  --input: #1E2433;
+  --ring: #00E5A0;
+  --chart-1: #00E5A0;
+  --chart-2: #7C6AF7;
+  --chart-3: #FFB347;
+  --chart-4: #FF6B6B;
+  --chart-5: #38BDF8;
+  --radius: 0.75rem;
+
+  /* health accent */
+  --health: #00E5A0;
+  --health-dim: rgba(0, 229, 160, 0.12);
+
+  /* finance accent */
+  --finance: #7C6AF7;
+  --finance-dim: rgba(124, 106, 247, 0.12);
+
+  /* warning */
+  --warning: #FFB347;
+  --danger: #FF6B6B;
+}
+
+.dark {
+  --background: #0D0F14;
+  --foreground: #F0F2F7;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(22, 26, 35, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #252A36;
+  border-radius: 4px;
+}
+
+/* Safe area for mobile */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+nextjs-portal {
+  display: none !important;
+}
+
+:root {
+  --vt-bg: #0D0F14;
+  --vt-card: #161A23;
+  --vt-border: #252A36;
+  --vt-text: #F0F2F7;
+  --vt-muted: #6B7280;
+  --vt-input: #1E2433;
+  --vt-health: #00E5A0;
+  --vt-finance: #7C6AF7;
+  --vt-danger: #FF6B6B;
+  --vt-warning: #FFB347;
+  --vt-nav: rgba(13,15,20,0.95);
+}
+
